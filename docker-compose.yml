@@ -9,7 +9,7 @@ services:
     command:
       - |
         CI=true npm start || (\
-          echo "🛑 \`npm start\` failed, but the container is running..." && \
+          echo "⛔ \`npm start\` failed, but the container is running..." && \
           tail -f /dev/null \
         )
     ports:
@@ -24,7 +24,7 @@ services:
     command:
       - |
         CI=true npm start || (\
-          echo "🛑 \`npm start\` failed, but the container is running..." && \
+          echo "⛔ \`npm start\` failed, but the container is running..." && \
           tail -f /dev/null \
         )
     ports:
