@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  app:
+    image: node
+    volumes:
+      - "./app:/mnt/app"
+    working_dir: "/mnt/app"
+    entrypoint: "/bin/bash -c"
+    command:
+      - |
+        CI=true npm start || (\
+          echo "🛑 \`npm start\` failed, but the container is running..." && \
+          tail -f /dev/null \
+        )
+
+    ports:
+      - 3000:3000
+        
