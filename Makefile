@@ -10,10 +10,10 @@ logs:
 	docker-compose logs -f
 
 install-app:
-	docker-compose run app "npm install"
+	docker-compose run --rm app "npm install"
 
 install-sync:
-	docker-compose run sync "npm install"
+	docker-compose run --rm sync "npm install"
 
 install: install-app install-sync
 
