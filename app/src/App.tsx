@@ -3,18 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-
-  const [syncStatus, setSyncStatus] = useState<String>("Loading...");
+  const [syncStatus, setSyncStatus] = useState<string>('Loading...');
 
   useEffect(() => {
-    fetch("http://localhost:4000/")
-    .then((response: Response) => response.text())
-    .then((text: String) => {
-      setSyncStatus(text);
-    })
-    .catch((error: Error) => {
-      console.error("Failed to fetch", error);
-    });
+    fetch('http://localhost:4000/')
+      .then((response: Response) => response.text())
+      .then((text: string) => {
+        setSyncStatus(text);
+      })
+      .catch((error: Error) => {
+        console.error('Failed to fetch', error);
+      });
   });
 
   return (
@@ -28,12 +27,7 @@ function App() {
           <dt>Sync status:</dt>
           <dd>{syncStatus}</dd>
         </dl>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
       </header>
